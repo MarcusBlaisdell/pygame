@@ -179,7 +179,7 @@ class Game:
     def victory_message(self):
         if not self.aliens.sprites():
             victory_surf = self.font.render('Winner',False,'white')
-            victory_rect = victory_surf.get_rect(center = (screen_width / 2, screen_height / 2))
+            victory_rect = victory_surf.get_rect(center = (self.screen_width / 2, self.screen_height / 2))
             self.screen.blit(victory_surf,victory_rect)
 
 
