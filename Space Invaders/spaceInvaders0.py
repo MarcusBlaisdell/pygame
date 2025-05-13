@@ -47,8 +47,8 @@ class Game:
 
         # audio
         music = pygame.mixer.Sound('./audio/music.wav')
-        music.set_volume(0.2)
-        music.play(loops = 2)
+        music.set_volume(0.1)
+        music.play(loops = 3)
 
     def create_obstacle(self, x_start, y_start, offset_x):
         for row_index, row in enumerate(self.shape):
@@ -130,7 +130,9 @@ class Game:
                 if pygame.sprite.spritecollide(laser,self.extra,True):
                     # audio
                     music = pygame.mixer.Sound('./audio/explosion.wav')
-                    music.set_volume(0.2)
+                    music.set_volume(0.4)
+                    music.play(loops = 0)
+                    music.play(loops = 0)
                     music.play(loops = 0)
                     self.score += 500
                     laser.kill()
