@@ -24,6 +24,10 @@ class Player(pygame.sprite.Sprite):
             self.rect.right = self.max_x_constraint
 
     def shoot_laser(self):
+        # audio
+        music = pygame.mixer.Sound('./audio/laser.wav')
+        music.set_volume(0.2)
+        music.play(loops = 0)
         self.lasers.add(Laser(self.rect.center, 8, self.rect.bottom))
 
     def get_input(self):
